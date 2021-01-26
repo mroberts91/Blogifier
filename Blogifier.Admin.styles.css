@@ -1,0 +1,210 @@
+/* /Pages/Account/Login.razor.rz.scp.css */
+.btn[b-glymc7bkok] {
+	width: 100%;
+}
+/* /Pages/Account/Register.razor.rz.scp.css */
+body[b-phzwr80qj3] {
+	background-color: #f4f4f4 !important;
+}
+
+h1[b-phzwr80qj3] {
+	font-size: 1.5rem;
+}
+
+.bf-account-container[b-phzwr80qj3] {
+	padding-top: 50px;
+}
+
+.bf-account[b-phzwr80qj3] {
+	width: 400px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 3rem;
+	border-radius: 1rem;
+	box-shadow: 0 0 10rem rgba(0,0,0,0.1);
+}
+
+.bf-account-footer[b-phzwr80qj3] {
+	text-align: center;
+	padding-top: 15px;
+}
+
+	.bf-account-footer a[b-phzwr80qj3] {
+		opacity: .25;
+	}
+
+.center[b-phzwr80qj3] {
+	margin: 0 auto;
+}
+
+.btn[b-phzwr80qj3] {
+	width: 100%;
+}
+/* /Shared/LoginLayout.razor.rz.scp.css */
+body[b-brpxg30do8] {
+   background-color: #f4f4f4 !important;
+}
+
+h1[b-brpxg30do8] {
+   font-size: 1.5rem;
+}
+
+.bf-account-container[b-brpxg30do8] {
+   padding-top: 50px;
+}
+
+.bf-account[b-brpxg30do8] {
+   width: 400px;
+   margin: 0 auto;
+   background-color: #fff;
+   padding: 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 10rem rgba(0,0,0,0.1);
+}
+
+.bf-account-footer[b-brpxg30do8] {
+   text-align: center;
+   padding-top: 15px;
+}
+
+.bf-account-footer a[b-brpxg30do8] {
+   opacity: .25;
+}
+
+.center[b-brpxg30do8] {
+   margin: 0 auto;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-vpm056aytz] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main[b-vpm056aytz] {
+    flex: 1;
+}
+
+.sidebar[b-vpm056aytz] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-vpm056aytz] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-vpm056aytz]  a, .top-row .btn-link[b-vpm056aytz] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-vpm056aytz] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-vpm056aytz] {
+        display: none;
+    }
+
+    .top-row.auth[b-vpm056aytz] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-vpm056aytz], .top-row .btn-link[b-vpm056aytz] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-vpm056aytz] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-vpm056aytz] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-vpm056aytz] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .main > div[b-vpm056aytz] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-f3eq8did0j] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-f3eq8did0j] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-f3eq8did0j] {
+    font-size: 1.1rem;
+}
+
+.oi[b-f3eq8did0j] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-f3eq8did0j] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-f3eq8did0j] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-f3eq8did0j] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-f3eq8did0j]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-f3eq8did0j]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-f3eq8did0j]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-f3eq8did0j] {
+        display: none;
+    }
+
+    .collapse[b-f3eq8did0j] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
