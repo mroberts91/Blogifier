@@ -33,7 +33,7 @@
       "Sotsera.Blazor.Toaster.dll": "sha256-2Uh+X0oKzmA9z3Uu5WoINWSlj1wxD7jLxB4+kFV6WvU=",
       "System.IO.Pipelines.dll": "sha256-qZYTUS+ga7CydtH54fYPbehFCvx3B49I74G8dxreTog=",
       "Blogifier.Shared.dll": "sha256-5P+598DEY\/xLQ2z39pmqfHsxL0n9YRuP2Pd\/+cecEHQ=",
-      "Blogifier.Admin.dll": "sha256-Vogy33dZZTJhm8rJuZ8MpkommrpfisQ2MR88LBEg5V0=",
+      "Blogifier.Admin.dll": "sha256-kTmzG3QFo\/TYkRRBO+OI0UkxLk5jAPUx79OW7rgOpEU=",
       "Microsoft.CSharp.dll": "sha256-0HZ9vhP3n+oYo1EJRnWZqqDViqlKfSEh6E1bEgm1vRk=",
       "System.Collections.Concurrent.dll": "sha256-1IZKwasL6Nc\/1mmESmLDRJgLngLM3CcBoIW1c\/rCEAU=",
       "System.Collections.Immutable.dll": "sha256-7vHm8P1nA6dLCk3L4Kyk7T21ZkCkOSrQODL7bVIzdkM=",
@@ -84,17 +84,17 @@
       "dotnet.5.0.2.js": "sha256-AQfZ6sKmq4EzOxN3pymKJ1nlGQaneN66\/2mcbArnIJ8="
     },
     "satelliteResources": {
+      "ru": {
+        "ru\/Blogifier.Shared.resources.dll": "sha256-dOpaGwjCRoionKcQFt07Z2pTp9BkAx\/XDY9maF+seLE="
+      },
       "es-ES": {
         "es-ES\/Blogifier.Shared.resources.dll": "sha256-eLtaN1umFepA6SfBEXrCbdQXwW7+rwOK4TMCxCFUVlQ="
-      },
-      "sv-SE": {
-        "sv-SE\/Blogifier.Shared.resources.dll": "sha256-Dsq+kwKdmDCO4WAzAmwX4vfRFyq4s9QFsl3zIQerYKE="
       },
       "pt-BR": {
         "pt-BR\/Blogifier.Shared.resources.dll": "sha256-8OYOvACV\/zQ2yKYdCMq5Tc2nUlZT0yryGkxIXqzm9ek="
       },
-      "ru": {
-        "ru\/Blogifier.Shared.resources.dll": "sha256-dOpaGwjCRoionKcQFt07Z2pTp9BkAx\/XDY9maF+seLE="
+      "sv-SE": {
+        "sv-SE\/Blogifier.Shared.resources.dll": "sha256-Dsq+kwKdmDCO4WAzAmwX4vfRFyq4s9QFsl3zIQerYKE="
       }
     }
   }
