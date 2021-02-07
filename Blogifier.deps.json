@@ -23,10 +23,10 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Blogifier/2.9.0.1": {
+      "Blogifier/1.0.0": {
         "dependencies": {
           "Blogifier.Admin": "1.0.0",
-          "Blogifier.Core": "1.0.0",
+          "Blogifier.Core": "2.9.0.1",
           "Blogifier.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "5.0.1",
           "Microsoft.AspNetCore.Server.IISIntegration": "2.2.1",
@@ -2240,7 +2240,7 @@
           "Blogifier.Admin.dll": {}
         }
       },
-      "Blogifier.Core/1.0.0": {
+      "Blogifier.Core/2.9.0.1": {
         "dependencies": {
           "Blogifier.Shared": "1.0.0",
           "Markdig": "0.22.1",
@@ -3922,7 +3922,7 @@
     }
   },
   "libraries": {
-    "Blogifier/2.9.0.1": {
+    "Blogifier/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -5283,7 +5283,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Blogifier.Core/1.0.0": {
+    "Blogifier.Core/2.9.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
