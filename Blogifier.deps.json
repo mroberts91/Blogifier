@@ -2270,17 +2270,17 @@
           "Blogifier.Shared.dll": {}
         },
         "resources": {
-          "ru/Blogifier.Shared.resources.dll": {
-            "locale": "ru"
-          },
           "es-ES/Blogifier.Shared.resources.dll": {
             "locale": "es-ES"
           },
-          "pt-BR/Blogifier.Shared.resources.dll": {
-            "locale": "pt-BR"
+          "ru/Blogifier.Shared.resources.dll": {
+            "locale": "ru"
           },
           "sv-SE/Blogifier.Shared.resources.dll": {
             "locale": "sv-SE"
+          },
+          "pt-BR/Blogifier.Shared.resources.dll": {
+            "locale": "pt-BR"
           }
         },
         "compile": {
