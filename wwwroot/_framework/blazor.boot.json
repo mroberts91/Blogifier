@@ -20,7 +20,7 @@
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-7mxFRRlriJzO95ZBz4cmDSFADogdaoDy8MxzQoNtwaU=",
       "Microsoft.Extensions.Configuration.Json.dll": "sha256-cwzKuqTaJjYc5QXknt6NaBt\/MWSt9DYHfmu0I\/CV2mc=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-3M5HLhwr6aFByq3YSnp+yMWxEsGMOyR0FUtURRzgpPw=",
-      "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-d9XzMVXKP\/zows\/PiChzfbMznwpLImyQJiRit6kRVVA=",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-2tbhjoJRlrYnUfhGFL2\/fMqMu0pOthl8VtOi9LZm+bM=",
       "Microsoft.Extensions.Localization.dll": "sha256-mjpGHZ5U2zuUJOSYoveccOzoh8\/xtb0Rc1WdX3q2jK8=",
       "Microsoft.Extensions.Localization.Abstractions.dll": "sha256-+0evj3MW6RO1rBKnBeh\/E2JnqrnuFul\/GUrRmt2O1vk=",
       "Microsoft.Extensions.Logging.dll": "sha256-TpIA498zSsaZAjS+42XzHSmeWdSuY4\/\/ydfZQGlz1O8=",
@@ -32,8 +32,8 @@
       "Newtonsoft.Json.dll": "sha256-N4LS9Q4MWtwMcEiKVAm17eMYYidLKee5B788vtw\/fdY=",
       "Sotsera.Blazor.Toaster.dll": "sha256-2Uh+X0oKzmA9z3Uu5WoINWSlj1wxD7jLxB4+kFV6WvU=",
       "System.IO.Pipelines.dll": "sha256-qZYTUS+ga7CydtH54fYPbehFCvx3B49I74G8dxreTog=",
-      "Blogifier.Shared.dll": "sha256-LPrstVyc5HbnLCJBlnHKCTKEnvfRG1ZlLoQoXKKBmbs=",
-      "Blogifier.Admin.dll": "sha256-fGPVhH26MJBfbGdiH4ZzBOzXSpgk2KzXkfd1L8JBFiM=",
+      "Blogifier.Shared.dll": "sha256-RPnTbkWvLArzWna4xC30ZDBxYhTHXSHUIYf1d3cIauc=",
+      "Blogifier.Admin.dll": "sha256-U9cvD\/uLHMy6J\/U7vv4dTwTwcrv4K3sunc0ZQZLligo=",
       "Microsoft.CSharp.dll": "sha256-P\/zjjScnHK7oyT6RaKT7EilDGF3L5KKdKIX27SnFZqg=",
       "System.Collections.Concurrent.dll": "sha256-kkzVZgrtt07p8JXkNPz12ji6dwC2e7rLjarihPptDfc=",
       "System.Collections.Immutable.dll": "sha256-pEghLg97dE8D4jHTunnWXmI081h0UPo8T4wf\/WROzqs=",
@@ -70,7 +70,7 @@
       "System.Text.Encodings.Web.dll": "sha256-7zfVa0Sh3YX3rjXhVE9KavYLMY3oPRdMurK29PgghFA=",
       "System.Text.Json.dll": "sha256-1Ag2IR7kTNxCFz7G8yQactyvoEB1aZF2rgPsfmy8b1Y=",
       "System.Text.RegularExpressions.dll": "sha256-nyz2FZWAN5iljeoXcfHTgG83dyd5OuI8UZQJHYzwPYE=",
-      "System.Private.CoreLib.dll": "sha256-zPKwGyZK3LZzs8o1\/cdj5HUJCk1x7gsPx+VoHh7caFY="
+      "System.Private.CoreLib.dll": "sha256-5QSoXwB+N9nr3fGENavx3RPc2SDIIhsdckw6GzSb4cs="
     },
     "lazyAssembly": null,
     "pdb": null,
@@ -88,7 +88,7 @@
         "es-ES\/Blogifier.Shared.resources.dll": "sha256-eLtaN1umFepA6SfBEXrCbdQXwW7+rwOK4TMCxCFUVlQ="
       },
       "ru": {
-        "ru\/Blogifier.Shared.resources.dll": "sha256-dOpaGwjCRoionKcQFt07Z2pTp9BkAx\/XDY9maF+seLE="
+        "ru\/Blogifier.Shared.resources.dll": "sha256-2KGGlNCMIBYNcmluXgUozDiAlTy2Mg4\/IQL8atL5uxM="
       },
       "sv-SE": {
         "sv-SE\/Blogifier.Shared.resources.dll": "sha256-Dsq+kwKdmDCO4WAzAmwX4vfRFyq4s9QFsl3zIQerYKE="
