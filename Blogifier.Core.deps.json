@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Blogifier.Core/2.9.0.3": {
+      "Blogifier.Core/2.9.0.4": {
         "dependencies": {
           "Blogifier.Shared": "1.0.0",
           "Markdig": "0.22.1",
@@ -1549,7 +1549,7 @@
     }
   },
   "libraries": {
-    "Blogifier.Core/2.9.0.3": {
+    "Blogifier.Core/2.9.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
