@@ -151,6 +151,9 @@ class ChartJsInterop {
         }
         if ((_c = (_b = config.options) === null || _b === void 0 ? void 0 : _b.scale) === null || _c === void 0 ? void 0 : _c.ticks) {
             config.options.scale.ticks.callback = this.getMethodHandler(config.options.scale.ticks.callback, undefined);
+            if (!config.options.scale.ticks.callback) {
+                delete config.options.scale.ticks.callback;
+            }
         }
     }
     getMethodHandler(handler, defaultFunc) {
