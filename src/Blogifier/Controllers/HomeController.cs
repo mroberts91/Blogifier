@@ -104,6 +104,7 @@ namespace Blogifier.Controllers
 			if (model.Pager.ShowOlder) model.Pager.LinkToOlder = $"?page={model.Pager.Older}";
 			if (model.Pager.ShowNewer) model.Pager.LinkToNewer = $"?page={model.Pager.Newer}";
 
+            ViewData["Category"] = category;
             string viewPath = $"~/Views/Themes/{model.Blog.Theme}/Category.cshtml";
 
             if (IsViewExists(viewPath))

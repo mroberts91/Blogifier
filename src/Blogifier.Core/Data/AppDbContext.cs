@@ -21,6 +21,7 @@ namespace Blogifier.Core.Data
         public DbSet<Newsletter> Newsletters { get; set; }
         public DbSet<MailSetting> MailSettings { get; set; }
         public DbSet<PostCategory> PostCategories { get; set; }
+        //public DbSet<SystemLog> Logs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +37,12 @@ namespace Blogifier.Core.Data
                 .HasOne(pt => pt.Category)
                 .WithMany(t => t.PostCategories)
                 .HasForeignKey(pt => pt.CategoryId);
+
+            //modelBuilder.Entity<SystemLog>(e =>
+            //{
+            //    e.HasKey(o => o.Id);
+            //    e.ToTable("Logs");
+            //});
 
             string sql = "getdate()";
 

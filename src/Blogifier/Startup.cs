@@ -60,8 +60,10 @@ namespace Blogifier
             else
             {
                 app.UseExceptionHandler("/Error");
+                app.UseHsts();
             }
 
+            app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
