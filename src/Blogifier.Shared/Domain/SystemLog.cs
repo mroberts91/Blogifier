@@ -3,14 +3,15 @@ using System.Linq;
 
 namespace Blogifier.Shared
 {
-    public record SystemLog
+    public class SystemLog
     {
-        public int Id;
-        public string Message;
-        public string MessageTemplate;
-        public string Level;
-        public DateTime TimeStamp;
-        public string Exception;
-        public string Properties;
+        public int Id { get; set; }
+        public string Message { get; set; }
+        public string MessageTemplate { get; set; }
+        public string Level { get; set; }
+        public string LogEvent { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Exception { get; set; }
+        public string Properties { get; set; }
     }
 }

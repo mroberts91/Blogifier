@@ -69,14 +69,13 @@ namespace Blogifier
             var config = host.Services.GetRequiredService<IConfiguration>();
 
             var logDB = config.GetValue<string>("Blogifier:ConnString");
-            var sinkOpts = new MSSqlServerSinkOptions { TableName = "Logs", AutoCreateSqlTable = true };
+            var sinkOpts = new MSSqlServerSinkOptions { TableName = "Logs" };
             var columnOpts = new ColumnOptions();
             columnOpts.Store.Remove(StandardColumn.Properties);
+            columnOpts.Store.Remove(StandardColumn.Id);
             columnOpts.Store.Add(StandardColumn.LogEvent);
             columnOpts.LogEvent.DataLength = 2048;
-            columnOpts.PrimaryKey = columnOpts.Id;
             columnOpts.TimeStamp.NonClusteredIndex = true;
-
 
             Log.Logger = new LoggerConfiguration()
                         .MinimumLevel.ControlledBy(new LoggingLevelSwitch(LogEventLevel.Information))

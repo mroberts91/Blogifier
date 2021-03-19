@@ -1,4 +1,5 @@
 using Blogifier.Core.Extensions;
+using Blogifier.Middleware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using System;
 
 namespace Blogifier
 {
@@ -30,10 +32,16 @@ namespace Blogifier
 
             services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 
+            services.AddSameSiteCookiePolicy();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddCookie();
+            })
+            .AddCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+            });
 
             services.AddCors(o => o.AddPolicy("BlogifierPolicy", builder =>
             {
@@ -65,6 +73,7 @@ namespace Blogifier
 
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
+
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
