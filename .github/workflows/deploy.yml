@@ -37,7 +37,7 @@ jobs:
       - name: 'App Settings Variable Substitution'
         uses: microsoft/variable-substitution@v1
         with:
-          files: '${{env.DOTNET_ROOT}}/blog/appsettings.json'
+          files: '${{env.AZURE_WEBAPP_PACKAGE_PATH}}/blog/appsettings.json'
         env:
           Blogifier.ConnString: ${{ secrets.DATA_STORE_CONNECTION_STRING }}
           Blogifier.Salt: ${{ env.PASSWORD_SALT }}
