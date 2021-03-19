@@ -1,4 +1,4 @@
-name: Deploy blog to Azure Web App
+name: 'Deploy blog to Azure Web App'
 
 on:
   push:
@@ -33,11 +33,24 @@ jobs:
           dotnet restore
           dotnet build --configuration Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/blog' 
-          
+
+      - name: 'App Settings Variable Substitution'
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: '${{env.DOTNET_ROOT}}/blog/appsettings.json'
+        env:
+          Blogifier.ConnString: ${{ secrets.DATA_STORE_CONNECTION_STRING }}
+          Blogifier.Salt: ${{ env.PASSWORD_SALT }}
+
       # Deploy to Azure Web apps
+      - name: 'Azure Login'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
           package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/blog'
