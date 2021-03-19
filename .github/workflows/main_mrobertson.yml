@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -27,10 +30,17 @@ jobs:
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+    - name: 'App Settings Variable Substitution'
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
+      env:
+        Blogifier.ConnString: ${{ secrets.DATA_STORE_CONNECTION_STRING }}
+        Blogifier.Salt: ${{ env.PASSWORD_SALT }}
+
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'mrobertson'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_7916681732774f93a5adcc5c773c138e }}
         package: ${{env.DOTNET_ROOT}}/myapp 
