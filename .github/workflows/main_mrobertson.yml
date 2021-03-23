@@ -19,6 +19,14 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - name: 'App Settings Variable Substitution'
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: './src/Blogifier/appsettings.json'
+      env:
+        Blogifier.ConnString: ${{ secrets.DATA_STORE_CONNECTION_STRING }}
+        Blogifier.Salt: ${{ env.PASSWORD_SALT }}
+
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -28,15 +36,7 @@ jobs:
       run: dotnet build ./src/Blogifier/Blogifier.csproj --configuration Release
 
     - name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
-    - name: 'App Settings Variable Substitution'
-      uses: microsoft/variable-substitution@v1
-      with:
-        files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
-      env:
-        Blogifier.ConnString: ${{ secrets.DATA_STORE_CONNECTION_STRING }}
-        Blogifier.Salt: ${{ env.PASSWORD_SALT }}
+      run: dotnet publish ./src/Blogifier/Blogifier.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
