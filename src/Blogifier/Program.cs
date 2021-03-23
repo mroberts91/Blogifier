@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Core;
 using Serilog.Events;
@@ -60,38 +61,54 @@ namespace Blogifier
 					  webBuilder
                         .UseSerilog()
 					    .UseContentRoot(Directory.GetCurrentDirectory())
-                        .UseIISIntegration()
 					    .UseStartup<Startup>()
                   );
 
         private static void CreateLogger(IHost host)
         {
-            var config = host.Services.GetRequiredService<IConfiguration>();
+            var logger = host.Services.GetRequiredService<ILogger<Program>>();
+            var config = host.Services.GetService<IConfiguration>();
 
-            var logDB = config.GetValue<string>("Blogifier:ConnString");
-            var sinkOpts = new MSSqlServerSinkOptions { TableName = "Logs" };
-            var columnOpts = new ColumnOptions();
-            columnOpts.Store.Remove(StandardColumn.Properties);
-            columnOpts.Store.Remove(StandardColumn.Id);
-            columnOpts.Store.Add(StandardColumn.LogEvent);
-            columnOpts.LogEvent.DataLength = 2048;
-            columnOpts.TimeStamp.NonClusteredIndex = true;
+            if (config != null)
+            {
+                logger.LogError("Checking if Conn String exists: {str}", config.GetValue<string>("Blogifier:ConnString"));
+            }
+            else
+            {
+                logger.LogError("Configuration is null");
+            }
 
-            Log.Logger = new LoggerConfiguration()
-                        .MinimumLevel.ControlledBy(new LoggingLevelSwitch(LogEventLevel.Information))
-                        .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-                        .MinimumLevel.Override("System", LogEventLevel.Warning)
-                        .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Warning)
-                        .Enrich.FromLogContext()
-                        .WriteTo.Console(
-                            outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                            theme: AnsiConsoleTheme.Literate)
-                        .WriteTo.MSSqlServer(
-                            connectionString: logDB,
-                            sinkOptions: sinkOpts,
-                            columnOptions: columnOpts
-                        )
-                        .CreateLogger();
+            var loggerConfig = new LoggerConfiguration()
+                .MinimumLevel.ControlledBy(new LoggingLevelSwitch(LogEventLevel.Information))
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Warning)
+                .Enrich.FromLogContext()
+                .WriteTo.Console(
+                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
+                    theme: AnsiConsoleTheme.Literate);
+
+            if (config != null)
+            {
+                var logDB = config.GetValue<string>("Blogifier:ConnString");
+                var sinkOpts = new MSSqlServerSinkOptions { TableName = "Logs" };
+                var columnOpts = new ColumnOptions();
+                columnOpts.Store.Remove(StandardColumn.Properties);
+                columnOpts.Store.Remove(StandardColumn.Id);
+                columnOpts.Store.Add(StandardColumn.LogEvent);
+                columnOpts.LogEvent.DataLength = 2048;
+                columnOpts.TimeStamp.NonClusteredIndex = true;
+
+                loggerConfig
+                    .WriteTo.MSSqlServer(
+                        connectionString: logDB,
+                        sinkOptions: sinkOpts,
+                        columnOptions: columnOpts
+                    );
+            }
+
+
+            Log.Logger = loggerConfig.CreateLogger();
         }
     }
 }
