@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -72,31 +72,33 @@ namespace Blogifier.Core.Extensions
          }
       }
 
-      /// <summary>
-      /// Converts title to valid URL slug
-      /// </summary>
-      /// <returns>Slug</returns>
-      public static string ToSlug(this string title)
-      {
-         var str = title.ToLowerInvariant();
-         str = str.Trim('-', '_');
+        /// <summary>
+        /// Converts title to valid URL slug
+        /// </summary>
+        /// <returns>Slug</returns>
+        public static string ToSlug(this string title)
+        {
+            var str = title.ToLowerInvariant();
+            str = str.Trim('-', '_');
 
-         if (string.IsNullOrEmpty(str))
-            return string.Empty;
+            if (string.IsNullOrEmpty(str))
+                return string.Empty;
 
-         var bytes = Encoding.GetEncoding("utf-8").GetBytes(str);
-         str = Encoding.UTF8.GetString(bytes);
+            var bytes = Encoding.GetEncoding("utf-8").GetBytes(str);
+            str = Encoding.UTF8.GetString(bytes);
 
-         str = Regex.Replace(str, @"\s", "-", RegexOptions.Compiled);
+            str = Regex.Replace(str, @"\s", "-", RegexOptions.Compiled);
 
-         str = Regex.Replace(str, @"([-_]){2,}", "$1", RegexOptions.Compiled);
+            str = Regex.Replace(str, @"([-_]){2,}", "$1", RegexOptions.Compiled);
 
-         str = RemoveIllegalCharacters(str);
+            str = Regex.Replace(str.ToLowerInvariant(), @"\.net", "dotnet");
 
-         return str;
-      }
+            str = RemoveIllegalCharacters(str);
 
-      public static string Hash(this string source, string salt)
+            return str;
+        }
+
+        public static string Hash(this string source, string salt)
 		{
          var bytes = KeyDerivation.Pbkdf2(
                    password: source,
